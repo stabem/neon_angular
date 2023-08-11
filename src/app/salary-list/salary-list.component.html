@@ -1,0 +1,36 @@
+<table class="table-container">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Valor</th>
+      <th>Desconto</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngIf="salaries.length > 0; else noSalaries">
+      <tr *ngFor="let salary of salaries">
+        <td (dblclick)="onDoubleClick(salary, 'date')">
+          <input *ngIf="editing?.id === salary.id && editing?.field === 'date'" (blur)="onEditDone(salary, 'date', $event)" [value]="salary.date">
+          <span *ngIf="editing?.id !== salary.id || editing?.field !== 'date'">{{ salary.date | date:'dd/MM/yyyy' }}</span>
+        </td>
+        <td (dblclick)="onDoubleClick(salary, 'amount')">
+          <input *ngIf="editing?.id === salary.id && editing?.field === 'amount'" (blur)="onEditDone(salary, 'amount', $event)" [value]="salary.amount">
+          <span *ngIf="editing?.id !== salary.id || editing?.field !== 'amount'">{{ salary.amount ? 'R$ ' + (salary.amount | number:'1.2-2') : '' }}</span>
+        </td>
+        <td (dblclick)="onDoubleClick(salary, 'discount')">
+          <input *ngIf="editing?.id === salary.id && editing?.field === 'discount'" (blur)="onEditDone(salary, 'discount', $event)" [value]="salary.discount">
+          <span *ngIf="editing?.id !== salary.id || editing?.field !== 'discount'">{{ salary.discount ? 'R$ ' + (salary.discount | number:'1.2-2') : '' }}</span>
+        </td>
+        <td>
+          <app-delete-button (delete)="onDeleteSalary(salary)"></app-delete-button>
+        </td>
+      </tr>
+    </ng-container>
+    <ng-template #noSalaries>
+      <tr>
+        <td colspan="4">Nenhum salário cadastrado para esse usuário</td>
+      </tr>
+    </ng-template>
+  </tbody>
+</table>

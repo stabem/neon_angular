@@ -1,0 +1,37 @@
+.dashboard {
+  padding: var(--spacings-medium);
+  background-color: rgba(113, 119, 144, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.dashboard h2 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacings-medium);
+}
+
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacings-medium);
+}
+
+.statistic-card {
+  background-color: rgba(113, 119, 144, 0.25);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.statistic-title {
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.statistic-value {
+  font-weight: bold;
+  font-size: 1.2rem;
+}

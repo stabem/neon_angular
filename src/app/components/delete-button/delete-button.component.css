@@ -1,0 +1,12 @@
+.delete-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0;
+}
+
+.delete-button:hover {
+  color: darken(var(--primary-color), 20%);
+}

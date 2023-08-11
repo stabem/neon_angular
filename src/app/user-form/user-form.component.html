@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="userForm" class="form-container">
+  <div class="form-input">
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" formControlName="cpf" required />
+  </div>
+  <div class="form-input">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" formControlName="name" required />
+  </div>
+  <div class="form-input">
+    <label for="birth_date">Data de Nascimento:</label>
+    <input type="date" id="birth_date" formControlName="birth_date" required />
+  </div>
+  <button type="submit" class="form-button">Enviar</button>
+</form>

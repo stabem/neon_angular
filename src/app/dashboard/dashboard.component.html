@@ -1,0 +1,21 @@
+<div class="dashboard">
+  <h2>Dashboard</h2>
+  <div class="statistics">
+    <div class="statistic-card">
+      <span class="statistic-title">Média dos salários:</span>
+      <span class="statistic-value">{{ averageSalary ? 'R$ ' + (averageSalary | number:'1.2-2') : '' }}</span>
+    </div>
+    <div class="statistic-card">
+      <span class="statistic-title">Média dos descontos:</span>
+      <span class="statistic-value">{{ averageDiscount ? 'R$ ' + (averageDiscount | number:'1.2-2') : '' }}</span>
+    </div>
+    <div class="statistic-card">
+      <span class="statistic-title">Maior salário:</span>
+      <span class="statistic-value">{{ highestSalary ? 'R$ ' + (highestSalary | number:'1.2-2') : '' }}</span>
+    </div>
+    <div class="statistic-card">
+      <span class="statistic-title">Menor salário:</span>
+      <span class="statistic-value">{{ lowestSalary ? 'R$ ' + (lowestSalary | number:'1.2-2') : '' }}</span>
+    </div>
+  </div>
+</div>

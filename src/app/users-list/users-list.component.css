@@ -1,0 +1,29 @@
+.table-container {
+  margin-top: 1rem;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--primary-color);
+  font-size: 1rem;
+}
+
+.table-container th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.table-container tbody tr:hover {
+  background-color: rgba(113, 119, 144, 0.1);
+  cursor: pointer;
+}

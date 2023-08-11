@@ -1,0 +1,31 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>CPF</th>
+        <th>Nome</th>
+        <th>Nascimento</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users" (click)="selectUser(user)">
+        <td (dblclick)="onDoubleClick(user, 'cpf')">
+          <span>{{ user.cpf }}</span>
+        </td>
+        <td (dblclick)="onDoubleClick(user, 'name')">
+          <input *ngIf="editing?.cpf === user.cpf && editing?.field === 'name'" (blur)="onEditDone(user, 'name', $event)" [value]="user.name">
+          <span *ngIf="editing?.cpf !== user.cpf || editing?.field !== 'name'">{{ user.name }}</span>
+        </td>
+        <td (dblclick)="onDoubleClick(user, 'birth_date')">
+          <input *ngIf="editing?.cpf === user.cpf && editing?.field === 'birth_date'" (blur)="onEditDone(user, 'birth_date', $event)" [value]="user.birth_date">
+          <span *ngIf="editing?.cpf !== user.cpf || editing?.field !== 'birth_date'">{{ user.birth_date | date:'dd/MM/yyyy' }}
+          </span>
+        </td>
+        <td>
+          <app-delete-button (delete)="onDeleteUser(user)"></app-delete-button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
